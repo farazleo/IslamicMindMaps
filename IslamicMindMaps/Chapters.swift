@@ -14,12 +14,14 @@ struct Chapter {
     var romanName:String
     var arabicName:String
     var totalVerses:Int64
+    var category:String
     
-    init(id:Int64 ,romanName:String,arabicName:String,totalVerses:Int64){
+    init(id:Int64 ,romanName:String,arabicName:String,totalVerses:Int64,category:String){
         self.id=id
         self.romanName=romanName
         self.arabicName=arabicName
         self.totalVerses=totalVerses
+        self.category=category
         
     }
     

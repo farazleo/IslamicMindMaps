@@ -27,6 +27,7 @@ struct dbManager {
         let romanName = Expression<String>("romanname")
         let arabicName = Expression<String>("arabicname")
         let totalVerses = Expression<Int64>("totalverses")
+        let category = Expression<String>("chaptertype")
       
         if let databaseFilePath = Bundle.main.path(forResource: K.DB.name, ofType: K.DB.filetype){
             
@@ -34,7 +35,7 @@ struct dbManager {
             let chapters = Table("chapter")
             
             for chapter in try! db.prepare(chapters) {
-                let myChapter=Chapter(id:chapter[id],romanName:chapter[romanName],arabicName: chapter[arabicName],totalVerses:chapter[totalVerses])
+                let myChapter=Chapter(id:chapter[id],romanName:chapter[romanName],arabicName: chapter[arabicName],totalVerses:chapter[totalVerses],category:chapter[category])
                 chaptersArray.append(myChapter)
                 
             }
