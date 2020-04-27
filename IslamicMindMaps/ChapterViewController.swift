@@ -13,7 +13,7 @@ class ChapterViewController: UIViewController{
     
     
     @IBOutlet var noItemView: UIView!
-
+    
     var filteredChapterNamesArray = [Chapter]()
     var isAllTabSelected = true
     var chapters = [Chapter]()
@@ -21,7 +21,7 @@ class ChapterViewController: UIViewController{
     let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet weak var chapterTableView: UITableView!
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,19 +35,15 @@ class ChapterViewController: UIViewController{
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Chapters"
- 
+        searchController.searchBar.placeholder = "Search chapters"
         
         
-   
-        
-
         if #available(iOS 11.0, *) {
             navigationItem.searchController = searchController
         } else {
             // Fallback on earlier versions
         }
-
+        
         definesPresentationContext = true
         
         searchController.searchBar.scopeButtonTitles = ["All","Meccan","Medinan"]
@@ -58,8 +54,6 @@ class ChapterViewController: UIViewController{
         }
         
     }
-
- 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -67,8 +61,8 @@ class ChapterViewController: UIViewController{
     }
     
     var isSearchBarEmpty: Bool {
-       return searchController.searchBar.text?.isEmpty ?? true
-     }
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
     
     var isFiltering: Bool {
         let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
@@ -81,32 +75,29 @@ class ChapterViewController: UIViewController{
         
         
         filteredChapterNamesArray = chapters.filter { (chapter: Chapter) -> Bool in
-            
             let doesCategoryMatch = chapter.category == category
-            
             if isSearchBarEmpty {
                 return doesCategoryMatch
             } else {
-                if searchController.searchBar.textInputMode?.primaryLanguage == "en-US"{
-                return doesCategoryMatch && chapter.romanName.trim().lowercased().contains(searchText.trim().lowercased())
+                if searchController.searchBar.textInputMode?.primaryLanguage == "ar"{
+                    return doesCategoryMatch && chapter.arabicName.trim().contains(searchText.trim())
                 }
                 else {
-                    return doesCategoryMatch && chapter.arabicName.trim().contains(searchText.trim())
+                    return doesCategoryMatch && chapter.romanName.trim().lowercased().contains(searchText.lowercased().trim())
                 }
             }
         }
         
         if (searchController.searchBar.text?.count == 0 || filteredChapterNamesArray.count > 0 ){
             
-            chapterTableView.backgroundView=nil
+            chapterTableView.backgroundView = nil
             chapterTableView.separatorStyle = UITableViewCell.SeparatorStyle(rawValue: 1)!
             
         }
         if filteredChapterNamesArray.count == 0 {
             
-            chapterTableView.backgroundView=noItemView
+            chapterTableView.backgroundView = noItemView
             chapterTableView.separatorStyle = .none
-            
             
         }
         
@@ -114,20 +105,16 @@ class ChapterViewController: UIViewController{
     }
     
     func filterContentForSearchTextWithAllCategory(_ searchText: String,
-                                                _ category: String) {
-        
-        
+                                                   _ category: String) {
         
         filteredChapterNamesArray = chapters.filter { (chapter: Chapter) -> Bool in
-            
-            
             
             if isSearchBarEmpty {
                 return true
             } else {
-              
+                
                 if searchController.searchBar.textInputMode?.primaryLanguage == "en-US" {
-                return  chapter.romanName.trim().lowercased().contains(searchText.trim().lowercased())
+                    return  chapter.romanName.trim().lowercased().contains(searchText.trim().lowercased())
                 }
                 else {
                     return  chapter.arabicName.trim().contains(searchText.trim())
@@ -136,23 +123,17 @@ class ChapterViewController: UIViewController{
         }
         if (searchController.searchBar.text?.count == 0 || filteredChapterNamesArray.count > 0 ){
             
-            chapterTableView.backgroundView=nil
+            chapterTableView.backgroundView = nil
             chapterTableView.separatorStyle = UITableViewCell.SeparatorStyle(rawValue: 1)!
             
         }
         if filteredChapterNamesArray.count == 0 {
             
-            chapterTableView.backgroundView=noItemView
+            chapterTableView.backgroundView = noItemView
             chapterTableView.separatorStyle = .none
             
             
         }
-        
- 
-             
-            
-            
-         
         
         chapterTableView.reloadData()
     }
@@ -160,8 +141,8 @@ class ChapterViewController: UIViewController{
     
 }
 
-    
-    
+
+
 
 
 
@@ -184,12 +165,12 @@ extension ChapterViewController:dbManagerDelegate{
 
 extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
     
-  
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         isFiltering ? filteredChapterNamesArray.count:chapters.count
-        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: K.reusableChapterCell, for: indexPath) as! TableViewCell
@@ -199,7 +180,7 @@ extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
             cell.romanName?.text=filteredChapterNamesArray[indexPath.row].romanName
             
             cell.arabicName?.text=filteredChapterNamesArray[indexPath.row].arabicName
-
+            
         }
         else {
             cell.romanName?.text=chapters[indexPath.row].romanName
@@ -216,18 +197,18 @@ extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
 //MARK: - UISearchResultsUpdating
 
 extension ChapterViewController: UISearchResultsUpdating {
-  func updateSearchResults(for searchController: UISearchController) {
-    let searchBar = searchController.searchBar
-    let category = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
-    if category == "All" {
-        filterContentForSearchTextWithAllCategory(searchBar.text!,category)
-        
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        let category = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
+        if category == "All" {
+            filterContentForSearchTextWithAllCategory(searchBar.text!,category)
+            
+        }
+        else {
+            filterContentForSearchTextWithCategory(searchBar.text!,category)
+            
+        }
     }
-    else {
-        filterContentForSearchTextWithCategory(searchBar.text!,category)
-        
-    }
-  }
 }
 
 //MARK: - UISearchBarDelegate
@@ -252,9 +233,9 @@ extension ChapterViewController:UISearchBarDelegate {
 extension String
 {
     func trim() -> String
-   {
-    return self.trimmingCharacters(in: NSCharacterSet.whitespaces)
-   }
+    {
+        return self.trimmingCharacters(in: NSCharacterSet.whitespaces)
+    }
 }
 
 
