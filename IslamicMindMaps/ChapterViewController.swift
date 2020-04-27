@@ -36,6 +36,8 @@ class ChapterViewController: UIViewController{
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Chapters"
+ 
+        
         
    
         
@@ -85,14 +87,35 @@ class ChapterViewController: UIViewController{
             if isSearchBarEmpty {
                 return doesCategoryMatch
             } else {
-                return doesCategoryMatch && chapter.romanName.lowercased().contains(searchText.lowercased())
+                if searchController.searchBar.textInputMode?.primaryLanguage == "en-US"{
+                return doesCategoryMatch && chapter.romanName.trim().lowercased().contains(searchText.trim().lowercased())
+                }
+                else {
+                    return doesCategoryMatch && chapter.arabicName.trim().contains(searchText.trim())
+                }
             }
+        }
+        
+        if (searchController.searchBar.text?.count == 0 || filteredChapterNamesArray.count > 0 ){
+            
+            chapterTableView.backgroundView=nil
+            chapterTableView.separatorStyle = UITableViewCell.SeparatorStyle(rawValue: 1)!
+            
+        }
+        if filteredChapterNamesArray.count == 0 {
+            
+            chapterTableView.backgroundView=noItemView
+            chapterTableView.separatorStyle = .none
+            
+            
         }
         
         chapterTableView.reloadData()
     }
-    func filterContentForSearchTextWithoutCategory(_ searchText: String,
+    
+    func filterContentForSearchTextWithAllCategory(_ searchText: String,
                                                 _ category: String) {
+        
         
         
         filteredChapterNamesArray = chapters.filter { (chapter: Chapter) -> Bool in
@@ -102,9 +125,34 @@ class ChapterViewController: UIViewController{
             if isSearchBarEmpty {
                 return true
             } else {
-                return  chapter.romanName.lowercased().contains(searchText.lowercased())
+              
+                if searchController.searchBar.textInputMode?.primaryLanguage == "en-US" {
+                return  chapter.romanName.trim().lowercased().contains(searchText.trim().lowercased())
+                }
+                else {
+                    return  chapter.arabicName.trim().contains(searchText.trim())
+                }
             }
         }
+        if (searchController.searchBar.text?.count == 0 || filteredChapterNamesArray.count > 0 ){
+            
+            chapterTableView.backgroundView=nil
+            chapterTableView.separatorStyle = UITableViewCell.SeparatorStyle(rawValue: 1)!
+            
+        }
+        if filteredChapterNamesArray.count == 0 {
+            
+            chapterTableView.backgroundView=noItemView
+            chapterTableView.separatorStyle = .none
+            
+            
+        }
+        
+ 
+             
+            
+            
+         
         
         chapterTableView.reloadData()
     }
@@ -172,7 +220,7 @@ extension ChapterViewController: UISearchResultsUpdating {
     let searchBar = searchController.searchBar
     let category = searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex]
     if category == "All" {
-        filterContentForSearchTextWithoutCategory(searchBar.text!,category)
+        filterContentForSearchTextWithAllCategory(searchBar.text!,category)
         
     }
     else {
@@ -188,7 +236,7 @@ extension ChapterViewController:UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         let category = searchBar.scopeButtonTitles![selectedScope]
         if category == "All" {
-            filterContentForSearchTextWithoutCategory(searchBar.text!,category)
+            filterContentForSearchTextWithAllCategory(searchBar.text!,category)
             
         }
         else {
@@ -197,6 +245,16 @@ extension ChapterViewController:UISearchBarDelegate {
         }
         
     }
+}
+
+//MARK: - String Extention
+
+extension String
+{
+    func trim() -> String
+   {
+    return self.trimmingCharacters(in: NSCharacterSet.whitespaces)
+   }
 }
 
 
