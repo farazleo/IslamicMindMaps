@@ -76,18 +76,13 @@
 		15D8C697244B03330088DE0A /* IslamicMindMaps */ = {
 			isa = PBXGroup;
 			children = (
+				9787844A245977050094F7E2 /* Model */,
+				9787844B2459775D0094F7E2 /* Controller */,
+				9787844C2459777D0094F7E2 /* View */,
+				15D8C6A1244B03330088DE0A /* Assets.xcassets */,
 				15D8C698244B03330088DE0A /* AppDelegate.swift */,
 				15D8C69A244B03330088DE0A /* SceneDelegate.swift */,
-				15D8C69C244B03330088DE0A /* ChapterViewController.swift */,
-				15D8C69E244B03330088DE0A /* Main.storyboard */,
-				15D8C6A1244B03330088DE0A /* Assets.xcassets */,
-				15D8C6A3244B03330088DE0A /* LaunchScreen.storyboard */,
 				15D8C6A6244B03330088DE0A /* Info.plist */,
-				15D8C6AC244B0E800088DE0A /* Constants.swift */,
-				15D8C6AE244C7E110088DE0A /* dbManager.swift */,
-				15484514244CBD2F002DF29A /* TableViewCell.swift */,
-				15484515244CBD2F002DF29A /* TableViewCell.xib */,
-				15F07CD724560363001A3236 /* Chapters.swift */,
 			);
 			path = IslamicMindMaps;
 			sourceTree = "<group>";
@@ -107,6 +102,35 @@
 				4D2F6C3C81D46119C2BF5F4C /* Pods-IslamicMindMaps.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9787844A245977050094F7E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15F07CD724560363001A3236 /* Chapters.swift */,
+				15D8C6AE244C7E110088DE0A /* dbManager.swift */,
+				15D8C6AC244B0E800088DE0A /* Constants.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9787844B2459775D0094F7E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15D8C69C244B03330088DE0A /* ChapterViewController.swift */,
+				15484514244CBD2F002DF29A /* TableViewCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9787844C2459777D0094F7E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15D8C69E244B03330088DE0A /* Main.storyboard */,
+				15D8C6A3244B03330088DE0A /* LaunchScreen.storyboard */,
+				15484515244CBD2F002DF29A /* TableViewCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		A445A429C3BC52BA29F05FA3 /* Frameworks */ = {
