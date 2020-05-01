@@ -9,16 +9,16 @@
 import UIKit
 import SDWebImage
 class MindMapCell: UITableViewCell {
-
+    
     @IBOutlet weak var mindMapImageView: UIImageView!
+    
+    @IBOutlet weak var verseNo: UILabel!
     
     var mindMap: MindMap? {
         didSet{
             mindMapImageView.sd_setImage(with: mindMap!.mindMapUrl, completed: nil)
         }
     }
-    
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

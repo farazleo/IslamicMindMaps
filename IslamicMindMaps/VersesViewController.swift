@@ -15,6 +15,8 @@ class VersesViewController: UIViewController {
     var verses = [String]()
     var mappingTable = [MappingTable]()
     var chapter: Chapter?
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad()
@@ -85,7 +87,6 @@ extension VersesViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        print(mappingTable[indexPath.row])
         performSegue(withIdentifier: K.Segue.versesToMindMap, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -99,7 +100,7 @@ extension VersesViewController: UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.verseCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.versesCell, for: indexPath)
         cell.textLabel?.text = verses[indexPath.row]
         return cell
     }

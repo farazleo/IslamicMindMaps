@@ -10,9 +10,9 @@ import UIKit
 
 class MindMapsViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    
+  
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var tableView: UITableView!
     
     var mappingTable: [MappingTable]? {
         didSet{
@@ -40,13 +40,15 @@ class MindMapsViewController: UIViewController {
         pickerView.dataSource = self
         pickerView.delegate = self
         
-        tableView.register(UINib(nibName: K.nib.MindMapCell, bundle: nil), forCellReuseIdentifier: K.Cell.mindMapsCell)
+        tableView.register(UINib(nibName: K.nib.MindMapsCell, bundle: nil), forCellReuseIdentifier: K.Cell.mindMapsCell)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        scrollToRow(at: selectedVerse!)
-        pickerView.selectRow(selectedVerse!, inComponent: 0, animated: true)
+        if selectedVerse != nil{
+            scrollToRow(at: selectedVerse!)
+            pickerView.selectRow(selectedVerse!, inComponent: 0, animated: true)
+        }
         
     }
     

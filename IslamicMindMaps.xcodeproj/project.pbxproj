@@ -135,9 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				15D8C69C244B03330088DE0A /* ChapterViewController.swift */,
+				15484514244CBD2F002DF29A /* ChaptersCell.swift */,
 				97878456245CB63B0094F7E2 /* VersesViewController.swift */,
 				97878458245CB63B0094F7E2 /* MindMapsViewController.swift */,
-				15484514244CBD2F002DF29A /* ChaptersCell.swift */,
 				97878455245CB63A0094F7E2 /* MindMapCell.swift */,
 			);
 			name = Controller;

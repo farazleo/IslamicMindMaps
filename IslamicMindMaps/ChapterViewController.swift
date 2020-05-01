@@ -138,7 +138,12 @@ class ChapterViewController: UIViewController{
         chapterTableView.reloadData()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = chapterTableView.indexPathForSelectedRow {
+            let destinationVC = segue.destination as! VersesViewController
+            destinationVC.chapter = chapters[indexPath.row]
+        }
+    }
 }
 
 
@@ -153,8 +158,6 @@ extension ChapterViewController:dbManagerDelegate{
     func didUpdateData(chapterArray: [Chapter]) {
         chapters=chapterArray
     }
-    
-    
 }
 
 
@@ -185,13 +188,13 @@ extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
         else {
             cell.romanName?.text=chapters[indexPath.row].romanName
             cell.arabicName?.text=chapters[indexPath.row].arabicName
-            
-            
-            
         }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.Segue.chaptersToVerses, sender: self)
+    }
     
 }
 //MARK: - UISearchResultsUpdating
