@@ -9,14 +9,48 @@
 import Foundation
 
 struct K {
-
-    static let cellIdentifier="ChapterCell"
-    static let reusableChapterCell="reusableChapterCell";
     
-    struct DB{
+    static let baseURl = "http://data.alhudamedia.com/apps/com.alhuda.mindmaps/images/"
+    
+    struct MappingFile
+    {
+        static let name = "verseToMindMap"
+        static let type = "csv"
+    }
+    
+    struct DB
+    {
         static let name = "quranlite"
-        static let filetype = "db"
+        static let fileType = "db"
         
+        struct Chapter
+        {
+            static let tableName = "chapter"
+            static let id = "id"
+            static let totalVerses = "totalverses"
+            static let romanName = "romanname"
+        }
+        struct Quran {
+            static let tableName = "quran"
+            static let text = "text"
+            static let sura = "sura"
+        }
+    }
+    
+    struct Segue
+    {
+        static let chaptersToVerses = "showVerses"
+        static let versesToMindMap = "showMindMaps"
+    }
+    
+    struct Cell {
+        static let chaptersCell = "ChaptersCell"
+        static let mindMapsCell = "MindMapsCell"
+        static let versesCell = "VersesCell"
+    }
+    struct nib {
+        static let MindMapsCell = "MindMapCell"
+        static let ChaptersCell = "ChaptersCell"
     }
 }
 

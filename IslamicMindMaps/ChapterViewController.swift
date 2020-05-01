@@ -25,7 +25,7 @@ class ChapterViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chapterTableView.register(UINib(nibName:"TableViewCell", bundle: nil), forCellReuseIdentifier:K.reusableChapterCell)
+        chapterTableView.register(UINib(nibName: K.nib.ChaptersCell, bundle: nil), forCellReuseIdentifier: K.Cell.chaptersCell)
         
         chapterTableView.dataSource = self
         chapterTableView.delegate = self
@@ -173,7 +173,7 @@ extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: K.reusableChapterCell, for: indexPath) as! TableViewCell
+        let cell=tableView.dequeueReusableCell(withIdentifier: K.Cell.chaptersCell, for: indexPath) as! ChaptersCell
         if isFiltering{
             
             
