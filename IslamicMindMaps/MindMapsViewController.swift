@@ -14,6 +14,7 @@ class MindMapsViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
     
+    var versesDict = [Int:[Int]]()
     var mappingTable: [MappingTable]? {
         didSet{
             for map in mappingTable!
@@ -23,8 +24,15 @@ class MindMapsViewController: UIViewController {
                     {
                         mindmaps.append(MindMap(chapterNo: map.sno ,verseNo: map.vno, mindMapUrl: url))
                     }
+                    if versesDict[map.startpg!] == nil{
+                        versesDict[map.startpg!] = [map.vno]
+                    }
+                    else{
+                        versesDict[map.startpg!]?.append(map.vno)
+                    }
                 }
             }
+            print(versesDict)
         }
     }
     
@@ -93,6 +101,9 @@ extension MindMapsViewController: UITableViewDataSource {
             if !mindmaps.isEmpty
             {
                 cell.mindMap = mindmaps[indexPath.row]
+                if let verses = versesDict[indexPath.row + 1] {
+                     cell.verseNo.text = verses.count > 1 ? "Verses \(verses)" : "Verse \(verses)"
+                }
             }
             return cell
         }

@@ -194,6 +194,7 @@ extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: K.Segue.chaptersToVerses, sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
