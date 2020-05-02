@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class ChaptersCell: UITableViewCell {
     @IBOutlet weak var romanName: UILabel!
     
     @IBOutlet weak var arabicName: UILabel!

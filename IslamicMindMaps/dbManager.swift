@@ -29,7 +29,7 @@ struct dbManager {
         let totalVerses = Expression<Int64>("totalverses")
         let category = Expression<String>("chaptertype")
       
-        if let databaseFilePath = Bundle.main.path(forResource: K.DB.name, ofType: K.DB.filetype){
+        if let databaseFilePath = Bundle.main.path(forResource: K.DB.name, ofType: K.DB.fileType){
             
             let db = try! Connection(databaseFilePath)
             let chapters = Table("chapter")

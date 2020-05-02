@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		15484516244CBD2F002DF29A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15484514244CBD2F002DF29A /* TableViewCell.swift */; };
-		15484517244CBD2F002DF29A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15484515244CBD2F002DF29A /* TableViewCell.xib */; };
+		15484516244CBD2F002DF29A /* ChaptersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15484514244CBD2F002DF29A /* ChaptersCell.swift */; };
 		15D8C699244B03330088DE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C698244B03330088DE0A /* AppDelegate.swift */; };
 		15D8C69B244B03330088DE0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C69A244B03330088DE0A /* SceneDelegate.swift */; };
 		15D8C69D244B03330088DE0A /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C69C244B03330088DE0A /* ChapterViewController.swift */; };
@@ -20,11 +19,18 @@
 		15F07CD6245601DC001A3236 /* quranlite.db in Resources */ = {isa = PBXBuildFile; fileRef = 15F07CD5245601DC001A3236 /* quranlite.db */; };
 		15F07CD824560363001A3236 /* Chapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F07CD724560363001A3236 /* Chapters.swift */; };
 		48BA2CE96A2D7BE8D951EE82 /* Pods_IslamicMindMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD376A373BD690DBD0AE618 /* Pods_IslamicMindMaps.framework */; };
+		9787844E245CA7210094F7E2 /* verseToMindMap.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9787844D245CA7210094F7E2 /* verseToMindMap.csv */; };
+		97878450245CA7630094F7E2 /* ChaptersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9787844F245CA7630094F7E2 /* ChaptersCell.xib */; };
+		97878453245CB6150094F7E2 /* MindMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97878451245CB6150094F7E2 /* MindMap.swift */; };
+		97878454245CB6150094F7E2 /* MappingTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97878452245CB6150094F7E2 /* MappingTable.swift */; };
+		97878459245CB63B0094F7E2 /* MindMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97878455245CB63A0094F7E2 /* MindMapCell.swift */; };
+		9787845A245CB63B0094F7E2 /* VersesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97878456245CB63B0094F7E2 /* VersesViewController.swift */; };
+		9787845B245CB63B0094F7E2 /* MindMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97878457245CB63B0094F7E2 /* MindMapCell.xib */; };
+		9787845C245CB63B0094F7E2 /* MindMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97878458245CB63B0094F7E2 /* MindMapsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		15484514244CBD2F002DF29A /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		15484515244CBD2F002DF29A /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		15484514244CBD2F002DF29A /* ChaptersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersCell.swift; sourceTree = "<group>"; };
 		15D8C695244B03330088DE0A /* IslamicMindMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IslamicMindMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15D8C698244B03330088DE0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15D8C69A244B03330088DE0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,14 @@
 		15F07CD724560363001A3236 /* Chapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapters.swift; sourceTree = "<group>"; };
 		37BDAA592B3656FCC8EC98F1 /* Pods-IslamicMindMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IslamicMindMaps.debug.xcconfig"; path = "Target Support Files/Pods-IslamicMindMaps/Pods-IslamicMindMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		4D2F6C3C81D46119C2BF5F4C /* Pods-IslamicMindMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IslamicMindMaps.release.xcconfig"; path = "Target Support Files/Pods-IslamicMindMaps/Pods-IslamicMindMaps.release.xcconfig"; sourceTree = "<group>"; };
+		9787844D245CA7210094F7E2 /* verseToMindMap.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = verseToMindMap.csv; sourceTree = "<group>"; };
+		9787844F245CA7630094F7E2 /* ChaptersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChaptersCell.xib; sourceTree = "<group>"; };
+		97878451245CB6150094F7E2 /* MindMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindMap.swift; sourceTree = "<group>"; };
+		97878452245CB6150094F7E2 /* MappingTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MappingTable.swift; sourceTree = "<group>"; };
+		97878455245CB63A0094F7E2 /* MindMapCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindMapCell.swift; sourceTree = "<group>"; };
+		97878456245CB63B0094F7E2 /* VersesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersesViewController.swift; sourceTree = "<group>"; };
+		97878457245CB63B0094F7E2 /* MindMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MindMapCell.xib; sourceTree = "<group>"; };
+		97878458245CB63B0094F7E2 /* MindMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindMapsViewController.swift; sourceTree = "<group>"; };
 		FCD376A373BD690DBD0AE618 /* Pods_IslamicMindMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IslamicMindMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,18 +90,13 @@
 		15D8C697244B03330088DE0A /* IslamicMindMaps */ = {
 			isa = PBXGroup;
 			children = (
+				9787844A245977050094F7E2 /* Model */,
+				9787844B2459775D0094F7E2 /* Controller */,
+				9787844C2459777D0094F7E2 /* View */,
+				15D8C6A1244B03330088DE0A /* Assets.xcassets */,
 				15D8C698244B03330088DE0A /* AppDelegate.swift */,
 				15D8C69A244B03330088DE0A /* SceneDelegate.swift */,
-				15D8C69C244B03330088DE0A /* ChapterViewController.swift */,
-				15D8C69E244B03330088DE0A /* Main.storyboard */,
-				15D8C6A1244B03330088DE0A /* Assets.xcassets */,
-				15D8C6A3244B03330088DE0A /* LaunchScreen.storyboard */,
 				15D8C6A6244B03330088DE0A /* Info.plist */,
-				15D8C6AC244B0E800088DE0A /* Constants.swift */,
-				15D8C6AE244C7E110088DE0A /* dbManager.swift */,
-				15484514244CBD2F002DF29A /* TableViewCell.swift */,
-				15484515244CBD2F002DF29A /* TableViewCell.xib */,
-				15F07CD724560363001A3236 /* Chapters.swift */,
 			);
 			path = IslamicMindMaps;
 			sourceTree = "<group>";
@@ -96,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				15F07CD5245601DC001A3236 /* quranlite.db */,
+				9787844D245CA7210094F7E2 /* verseToMindMap.csv */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -107,6 +117,41 @@
 				4D2F6C3C81D46119C2BF5F4C /* Pods-IslamicMindMaps.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9787844A245977050094F7E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15F07CD724560363001A3236 /* Chapters.swift */,
+				97878451245CB6150094F7E2 /* MindMap.swift */,
+				15D8C6AE244C7E110088DE0A /* dbManager.swift */,
+				97878452245CB6150094F7E2 /* MappingTable.swift */,
+				15D8C6AC244B0E800088DE0A /* Constants.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9787844B2459775D0094F7E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				15D8C69C244B03330088DE0A /* ChapterViewController.swift */,
+				15484514244CBD2F002DF29A /* ChaptersCell.swift */,
+				97878456245CB63B0094F7E2 /* VersesViewController.swift */,
+				97878458245CB63B0094F7E2 /* MindMapsViewController.swift */,
+				97878455245CB63A0094F7E2 /* MindMapCell.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9787844C2459777D0094F7E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				15D8C69E244B03330088DE0A /* Main.storyboard */,
+				15D8C6A3244B03330088DE0A /* LaunchScreen.storyboard */,
+				9787844F245CA7630094F7E2 /* ChaptersCell.xib */,
+				97878457245CB63B0094F7E2 /* MindMapCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		A445A429C3BC52BA29F05FA3 /* Frameworks */ = {
@@ -177,11 +222,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9787844E245CA7210094F7E2 /* verseToMindMap.csv in Resources */,
 				15D8C6A5244B03330088DE0A /* LaunchScreen.storyboard in Resources */,
 				15F07CD6245601DC001A3236 /* quranlite.db in Resources */,
-				15484517244CBD2F002DF29A /* TableViewCell.xib in Resources */,
+				9787845B245CB63B0094F7E2 /* MindMapCell.xib in Resources */,
 				15D8C6A2244B03330088DE0A /* Assets.xcassets in Resources */,
 				15D8C6A0244B03330088DE0A /* Main.storyboard in Resources */,
+				97878450245CA7630094F7E2 /* ChaptersCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,11 +283,16 @@
 			files = (
 				15D8C69D244B03330088DE0A /* ChapterViewController.swift in Sources */,
 				15D8C699244B03330088DE0A /* AppDelegate.swift in Sources */,
+				97878454245CB6150094F7E2 /* MappingTable.swift in Sources */,
+				9787845C245CB63B0094F7E2 /* MindMapsViewController.swift in Sources */,
 				15F07CD824560363001A3236 /* Chapters.swift in Sources */,
 				15D8C69B244B03330088DE0A /* SceneDelegate.swift in Sources */,
-				15484516244CBD2F002DF29A /* TableViewCell.swift in Sources */,
+				15484516244CBD2F002DF29A /* ChaptersCell.swift in Sources */,
 				15D8C6AF244C7E110088DE0A /* dbManager.swift in Sources */,
+				97878453245CB6150094F7E2 /* MindMap.swift in Sources */,
+				97878459245CB63B0094F7E2 /* MindMapCell.swift in Sources */,
 				15D8C6AD244B0E800088DE0A /* Constants.swift in Sources */,
+				9787845A245CB63B0094F7E2 /* VersesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

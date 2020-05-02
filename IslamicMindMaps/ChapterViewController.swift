@@ -25,7 +25,7 @@ class ChapterViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        chapterTableView.register(UINib(nibName:"TableViewCell", bundle: nil), forCellReuseIdentifier:K.reusableChapterCell)
+        chapterTableView.register(UINib(nibName: K.nib.ChaptersCell, bundle: nil), forCellReuseIdentifier: K.Cell.chaptersCell)
         
         chapterTableView.dataSource = self
         chapterTableView.delegate = self
@@ -138,7 +138,12 @@ class ChapterViewController: UIViewController{
         chapterTableView.reloadData()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = chapterTableView.indexPathForSelectedRow {
+            let destinationVC = segue.destination as! VersesViewController
+            destinationVC.chapter = chapters[indexPath.row]
+        }
+    }
 }
 
 
@@ -153,8 +158,6 @@ extension ChapterViewController:dbManagerDelegate{
     func didUpdateData(chapterArray: [Chapter]) {
         chapters=chapterArray
     }
-    
-    
 }
 
 
@@ -173,7 +176,7 @@ extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=tableView.dequeueReusableCell(withIdentifier: K.reusableChapterCell, for: indexPath) as! TableViewCell
+        let cell=tableView.dequeueReusableCell(withIdentifier: K.Cell.chaptersCell, for: indexPath) as! ChaptersCell
         if isFiltering{
             
             
@@ -185,13 +188,14 @@ extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
         else {
             cell.romanName?.text=chapters[indexPath.row].romanName
             cell.arabicName?.text=chapters[indexPath.row].arabicName
-            
-            
-            
         }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.Segue.chaptersToVerses, sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }
 //MARK: - UISearchResultsUpdating
