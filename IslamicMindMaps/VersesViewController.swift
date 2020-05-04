@@ -102,7 +102,18 @@ extension VersesViewController: UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.versesCell, for: indexPath)
         cell.textLabel?.text = verses[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
         return cell
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+
+        UIView.animate(
+            withDuration: 0.5,
+            delay: 0.08 * Double(indexPath.row),
+            animations: {
+                cell.alpha = 1
+        })
     }
 }
 
