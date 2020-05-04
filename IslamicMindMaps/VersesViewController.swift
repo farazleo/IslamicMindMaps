@@ -15,6 +15,7 @@ class VersesViewController: UIViewController {
     var verses = [String]()
     var mappingTable = [MappingTable]()
     var chapter: Chapter?
+    var dbManager = DBManager()
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -24,23 +25,8 @@ class VersesViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
-        let stringPath =  Bundle.main.path(forResource: K.DB.name, ofType: K.DB.fileType)
-        
-        let db = try! Connection(stringPath!)
-        
-        let suraId = Expression<Int64>(K.DB.Quran.sura)
-        let text = Expression<String>(K.DB.Quran.text)
-
-        let quranTable = Table(K.DB.Quran.tableName)
-       
-        
-        let surahVerses = quranTable.filter(suraId == chapter!.id)
-        
-        for verse in try! db.prepare(surahVerses) {
-            verses.append(verse[text])
-        }
-        tableView.reloadData()
+        dbManager.delegateVerses = self
+        dbManager.getVerses(of: chapter!.id)
         loadMappingTable()
     }
     
@@ -80,6 +66,19 @@ class VersesViewController: UIViewController {
             }
         }
     }
+}
+
+// MARK:- Verses Data Delegate
+extension VersesViewController: VersesDataDelegate {
+    func didUpdateVerses(_ dbManager: DBManager, with versesArray: [String])
+    {
+        verses = versesArray
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    
 }
 
 //MARK:- Table View Delegate

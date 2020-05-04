@@ -15,7 +15,7 @@
 		15D8C6A2244B03330088DE0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15D8C6A1244B03330088DE0A /* Assets.xcassets */; };
 		15D8C6A5244B03330088DE0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D8C6A3244B03330088DE0A /* LaunchScreen.storyboard */; };
 		15D8C6AD244B0E800088DE0A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C6AC244B0E800088DE0A /* Constants.swift */; };
-		15D8C6AF244C7E110088DE0A /* dbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C6AE244C7E110088DE0A /* dbManager.swift */; };
+		15D8C6AF244C7E110088DE0A /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C6AE244C7E110088DE0A /* DBManager.swift */; };
 		15F07CD6245601DC001A3236 /* quranlite.db in Resources */ = {isa = PBXBuildFile; fileRef = 15F07CD5245601DC001A3236 /* quranlite.db */; };
 		15F07CD824560363001A3236 /* Chapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F07CD724560363001A3236 /* Chapters.swift */; };
 		48BA2CE96A2D7BE8D951EE82 /* Pods_IslamicMindMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD376A373BD690DBD0AE618 /* Pods_IslamicMindMaps.framework */; };
@@ -40,7 +40,7 @@
 		15D8C6A4244B03330088DE0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15D8C6A6244B03330088DE0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15D8C6AC244B0E800088DE0A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		15D8C6AE244C7E110088DE0A /* dbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dbManager.swift; sourceTree = "<group>"; };
+		15D8C6AE244C7E110088DE0A /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		15F07CD5245601DC001A3236 /* quranlite.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = quranlite.db; sourceTree = "<group>"; };
 		15F07CD724560363001A3236 /* Chapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapters.swift; sourceTree = "<group>"; };
 		37BDAA592B3656FCC8EC98F1 /* Pods-IslamicMindMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IslamicMindMaps.debug.xcconfig"; path = "Target Support Files/Pods-IslamicMindMaps/Pods-IslamicMindMaps.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			children = (
 				15F07CD724560363001A3236 /* Chapters.swift */,
 				97878451245CB6150094F7E2 /* MindMap.swift */,
-				15D8C6AE244C7E110088DE0A /* dbManager.swift */,
+				15D8C6AE244C7E110088DE0A /* DBManager.swift */,
 				97878452245CB6150094F7E2 /* MappingTable.swift */,
 				15D8C6AC244B0E800088DE0A /* Constants.swift */,
 			);
@@ -288,7 +288,7 @@
 				15F07CD824560363001A3236 /* Chapters.swift in Sources */,
 				15D8C69B244B03330088DE0A /* SceneDelegate.swift in Sources */,
 				15484516244CBD2F002DF29A /* ChaptersCell.swift in Sources */,
-				15D8C6AF244C7E110088DE0A /* dbManager.swift in Sources */,
+				15D8C6AF244C7E110088DE0A /* DBManager.swift in Sources */,
 				97878453245CB6150094F7E2 /* MindMap.swift in Sources */,
 				97878459245CB63B0094F7E2 /* MindMapCell.swift in Sources */,
 				15D8C6AD244B0E800088DE0A /* Constants.swift in Sources */,

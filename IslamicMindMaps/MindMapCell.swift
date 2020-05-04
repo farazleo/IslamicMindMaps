@@ -16,7 +16,8 @@ class MindMapCell: UITableViewCell {
     
     var mindMap: MindMap? {
         didSet{
-            mindMapImageView.sd_setImage(with: mindMap!.mindMapUrl, completed: nil)
+            //mindMapImageView.sd_setImage(with: mindMap!.mindMapUrl, completed: nil)
+            mindMapImageView.sd_setImage(with: mindMap!.mindMapUrl, placeholderImage: UIImage(named: "loading"))
         }
     }
     

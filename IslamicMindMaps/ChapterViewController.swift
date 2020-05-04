@@ -17,7 +17,7 @@ class ChapterViewController: UIViewController{
     var filteredChapterNamesArray = [Chapter]()
     var isAllTabSelected = true
     var chapters = [Chapter]()
-    var myDbManager = dbManager()
+    var myDbManager = DBManager()
     let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet weak var chapterTableView: UITableView!
@@ -29,7 +29,7 @@ class ChapterViewController: UIViewController{
         
         chapterTableView.dataSource = self
         chapterTableView.delegate = self
-        myDbManager.delegate = self
+        myDbManager.delegateChapters = self
         myDbManager.dataFetch()
         chapterTableView.keyboardDismissMode = .onDrag
         searchController.searchBar.delegate = self
@@ -151,13 +151,15 @@ class ChapterViewController: UIViewController{
 
 
 
-//MARK: - dbManagerDelegate
+//MARK: - Chapters Data Delegate
 
-extension ChapterViewController:dbManagerDelegate{
+extension ChapterViewController:ChaptersDataDelegate {
     
-    func didUpdateData(chapterArray: [Chapter]) {
-        chapters=chapterArray
+    func didUpdateChapters(_ dbManager: DBManager, with chaptersArray: [Chapter]) {
+        chapters = chaptersArray
     }
+    
+    
 }
 
 
