@@ -28,6 +28,8 @@ class VersesViewController: UIViewController {
         dbManager.delegateVerses = self
         dbManager.getVerses(of: chapter!.id)
         loadMappingTable()
+        tableView.separatorStyle = .none
+        
     }
     
     func loadMappingTable()
@@ -101,19 +103,35 @@ extension VersesViewController: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Cell.versesCell, for: indexPath)
-        cell.textLabel?.text = verses[indexPath.row]
+        let attributedString = NSMutableAttributedString(string: verses[indexPath.row])
+        
+        // *** Create instance of `NSMutableParagraphStyle`
+        let paragraphStyle = NSMutableParagraphStyle()
+        
+        // *** set LineSpacing property in points ***
+        // Whatever line spacing you want in points
+        paragraphStyle.lineSpacing = 26
+        paragraphStyle.alignment = NSTextAlignment.center
+        
+        // *** Apply attribute to string ***
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+        
+        // *** Set Attributed String to your label ***
+        
+        cell.textLabel?.attributedText = attributedString
         cell.textLabel?.numberOfLines = 0
         return cell
     }
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.alpha = 0
-
-        UIView.animate(
-            withDuration: 0.5,
-            delay: 0.08 * Double(indexPath.row),
-            animations: {
-                cell.alpha = 1
-        })
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        cell.alpha = 0
+//
+//        UIView.animate(
+//            withDuration: 0.5,
+//            delay: 0.08 * Double(indexPath.row),
+//            animations: {
+//                cell.alpha = 1
+//        })
+//    }
     }
-}
+
 

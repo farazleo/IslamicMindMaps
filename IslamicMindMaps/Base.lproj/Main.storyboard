@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="egc-8W-icS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="egc-8W-icS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -60,13 +60,13 @@
                     <viewLayoutGuide key="safeArea" id="CeE-AI-Xmf"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1937.68115942029" y="116.51785714285714"/>
+            <point key="canvasLocation" x="1620" y="66"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Quran-->
         <scene sceneID="o4u-pZ-yOs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tvn-t9-CR1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="ggu-s8-SFt"/>
+                    <tabBarItem key="tabBarItem" title="Quran" image="book" catalog="system" id="ggu-s8-SFt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ftr-1j-Zoe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -79,7 +79,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9f-7F-skI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629" y="118"/>
+            <point key="canvasLocation" x="629" y="67"/>
         </scene>
         <!--Verses View Controller-->
         <scene sceneID="4XH-Iw-zZH">
@@ -130,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fD7-Vy-iNd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884.057971014493" y="117.85714285714285"/>
+            <point key="canvasLocation" x="2567" y="67"/>
         </scene>
         <!--Mind Maps View Controller-->
         <scene sceneID="gL1-wT-s60">
@@ -173,57 +173,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Pg-I3-2wD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3855.0724637681164" y="117.85714285714285"/>
+            <point key="canvasLocation" x="3486" y="66"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--My Tab Bar Controller-->
         <scene sceneID="x4W-i6-T2e">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="egc-8W-icS" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="egc-8W-icS" customClass="MyTabBarController" customModule="IslamicMindMaps" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NmZ-aE-vFh">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="tvn-t9-CR1" kind="relationship" relationship="viewControllers" id="Zri-oh-G99"/>
-                        <segue destination="JTY-qD-Lsj" kind="relationship" relationship="viewControllers" id="JYP-yp-vcI"/>
-                        <segue destination="MBI-xM-cSR" kind="relationship" relationship="viewControllers" id="DkD-Lx-tUZ"/>
+                        <segue destination="MBI-xM-cSR" kind="relationship" relationship="viewControllers" id="xuJ-lh-HZF"/>
+                        <segue destination="tvn-t9-CR1" kind="relationship" relationship="viewControllers" id="aDt-5v-jUr"/>
+                        <segue destination="JTY-qD-Lsj" kind="relationship" relationship="viewControllers" id="mLK-3w-jlw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KoU-99-5jS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1354" y="1031"/>
+            <point key="canvasLocation" x="-1229" y="871"/>
         </scene>
-        <!--View Controller-->
+        <!--Saved View Controller-->
         <scene sceneID="9Ak-Ye-xn5">
             <objects>
-                <viewController id="MBI-xM-cSR" sceneMemberID="viewController">
+                <viewController id="MBI-xM-cSR" customClass="SavedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o0J-pG-BVL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PDF VIEW" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jba-ZS-JfC">
-                                <rect key="frame" x="143" y="430.5" width="128.5" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jba-ZS-JfC">
+                                <rect key="frame" x="166" y="430.5" width="82" height="35"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen under construction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOc-XU-3yD">
+                                <rect key="frame" x="121" y="464" width="172" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="TOc-XU-3yD" firstAttribute="centerX" secondItem="BDG-gH-XKu" secondAttribute="centerX" id="1qf-jc-5a7"/>
                             <constraint firstItem="jba-ZS-JfC" firstAttribute="centerY" secondItem="o0J-pG-BVL" secondAttribute="centerY" id="5hg-uu-6n0"/>
                             <constraint firstItem="jba-ZS-JfC" firstAttribute="centerX" secondItem="o0J-pG-BVL" secondAttribute="centerX" id="hs2-qj-8gI"/>
+                            <constraint firstItem="TOc-XU-3yD" firstAttribute="top" secondItem="jba-ZS-JfC" secondAttribute="bottom" constant="-1.5" id="zPY-4O-Nba"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BDG-gH-XKu"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="d5F-oK-eQ2"/>
+                    <tabBarItem key="tabBarItem" image="heart.fill" catalog="system" id="d5F-oK-eQ2"/>
                     <navigationItem key="navigationItem" id="GeI-D2-P2J"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlF-1s-12e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630" y="918"/>
+            <point key="canvasLocation" x="629" y="871"/>
         </scene>
-        <!--View Controller-->
+        <!--Hadith-->
         <scene sceneID="aoc-z8-ZXQ">
             <objects>
                 <viewController id="JTY-qD-Lsj" sceneMemberID="viewController">
@@ -232,8 +241,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hadith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1GR-Vb-h7P">
-                                <rect key="frame" x="179" y="436.5" width="56.5" height="23"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <rect key="frame" x="166" y="431.5" width="82" height="33"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Screen under construction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKe-3r-DdK">
+                                <rect key="frame" x="121" y="463" width="172" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -241,15 +256,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1GR-Vb-h7P" firstAttribute="centerX" secondItem="lE2-zq-ul9" secondAttribute="centerX" id="KfO-36-1FO"/>
+                            <constraint firstItem="KKe-3r-DdK" firstAttribute="centerX" secondItem="I5b-oA-6de" secondAttribute="centerX" id="NLN-fH-LII"/>
                             <constraint firstItem="1GR-Vb-h7P" firstAttribute="centerY" secondItem="lE2-zq-ul9" secondAttribute="centerY" id="fOU-nk-SjU"/>
+                            <constraint firstItem="KKe-3r-DdK" firstAttribute="top" secondItem="1GR-Vb-h7P" secondAttribute="bottom" constant="-1.5" id="hrd-B7-KPT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I5b-oA-6de"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="C1L-pQ-210"/>
+                    <tabBarItem key="tabBarItem" title="Hadith" image="message" catalog="system" id="C1L-pQ-210"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMT-Ny-dtk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629" y="1629"/>
+            <point key="canvasLocation" x="629" y="1594"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="book" catalog="system" width="64" height="50"/>
+        <image name="heart.fill" catalog="system" width="64" height="54"/>
+        <image name="message" catalog="system" width="64" height="56"/>
+    </resources>
+    <color key="tintColor" red="0.24465948539999999" green="0.24465948539999999" blue="0.24465948539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

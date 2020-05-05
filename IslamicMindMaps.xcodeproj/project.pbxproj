@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		15484516244CBD2F002DF29A /* ChaptersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15484514244CBD2F002DF29A /* ChaptersCell.swift */; };
+		15C1DB722461E2B500AB781B /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C1DB712461E2B500AB781B /* SavedViewController.swift */; };
+		15C1DB742461E3D000AB781B /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C1DB732461E3D000AB781B /* MyTabBarController.swift */; };
 		15D8C699244B03330088DE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C698244B03330088DE0A /* AppDelegate.swift */; };
 		15D8C69B244B03330088DE0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C69A244B03330088DE0A /* SceneDelegate.swift */; };
 		15D8C69D244B03330088DE0A /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D8C69C244B03330088DE0A /* ChapterViewController.swift */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		15484514244CBD2F002DF29A /* ChaptersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersCell.swift; sourceTree = "<group>"; };
+		15C1DB712461E2B500AB781B /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		15C1DB732461E3D000AB781B /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		15D8C695244B03330088DE0A /* IslamicMindMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IslamicMindMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15D8C698244B03330088DE0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15D8C69A244B03330088DE0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				97878456245CB63B0094F7E2 /* VersesViewController.swift */,
 				97878458245CB63B0094F7E2 /* MindMapsViewController.swift */,
 				97878455245CB63A0094F7E2 /* MindMapCell.swift */,
+				15C1DB712461E2B500AB781B /* SavedViewController.swift */,
+				15C1DB732461E3D000AB781B /* MyTabBarController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -291,8 +297,10 @@
 				15D8C6AF244C7E110088DE0A /* DBManager.swift in Sources */,
 				97878453245CB6150094F7E2 /* MindMap.swift in Sources */,
 				97878459245CB63B0094F7E2 /* MindMapCell.swift in Sources */,
+				15C1DB722461E2B500AB781B /* SavedViewController.swift in Sources */,
 				15D8C6AD244B0E800088DE0A /* Constants.swift in Sources */,
 				9787845A245CB63B0094F7E2 /* VersesViewController.swift in Sources */,
+				15C1DB742461E3D000AB781B /* MyTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
