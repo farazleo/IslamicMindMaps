@@ -54,7 +54,6 @@ class VersesViewController: UIViewController {
         }
     }
     
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if let destinationVC = segue.destination as? MindMapsViewController {
@@ -70,6 +69,10 @@ class VersesViewController: UIViewController {
 
 // MARK:- Verses Data Delegate
 extension VersesViewController: VersesDataDelegate {
+    func didFailWithError(_ dbManager: DBManager, with error: String) {
+        print(error)
+    }
+    
     func didUpdateVerses(_ dbManager: DBManager, with versesArray: [String])
     {
         verses = versesArray
@@ -77,8 +80,6 @@ extension VersesViewController: VersesDataDelegate {
             self.tableView.reloadData()
         }
     }
-    
-    
 }
 
 //MARK:- Table View Delegate

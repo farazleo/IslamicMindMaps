@@ -55,6 +55,12 @@ class ChapterViewController: UIViewController{
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
         chapterTableView.endEditing(true)
@@ -140,6 +146,7 @@ class ChapterViewController: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = chapterTableView.indexPathForSelectedRow {
+            tabBarController?.tabBar.isHidden = true
             let destinationVC = segue.destination as! VersesViewController
             destinationVC.chapter = chapters[indexPath.row]
         }
@@ -154,20 +161,19 @@ class ChapterViewController: UIViewController{
 //MARK: - Chapters Data Delegate
 
 extension ChapterViewController:ChaptersDataDelegate {
+    func didFailWithError(_ dbManager: DBManager, with error: String) {
+        print(error)
+    }
+    
     
     func didUpdateChapters(_ dbManager: DBManager, with chaptersArray: [Chapter]) {
         chapters = chaptersArray
     }
-    
-    
 }
 
 
 
 //MARK: - UITableViewDelegate
-
-
-
 extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
     
     
