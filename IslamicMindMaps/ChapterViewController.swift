@@ -17,7 +17,7 @@ class ChapterViewController: UIViewController{
     var filteredChapterNamesArray = [Chapter]()
     var isAllTabSelected = true
     var chapters = [Chapter]()
-    var myDbManager = dbManager()
+    var myDbManager = DBManager()
     let searchController = UISearchController(searchResultsController: nil)
     
     @IBOutlet weak var chapterTableView: UITableView!
@@ -29,7 +29,7 @@ class ChapterViewController: UIViewController{
         
         chapterTableView.dataSource = self
         chapterTableView.delegate = self
-        myDbManager.delegate = self
+        myDbManager.delegateChapters = self
         myDbManager.dataFetch()
         chapterTableView.keyboardDismissMode = .onDrag
         searchController.searchBar.delegate = self
@@ -54,6 +54,12 @@ class ChapterViewController: UIViewController{
         }
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -140,6 +146,7 @@ class ChapterViewController: UIViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = chapterTableView.indexPathForSelectedRow {
+            tabBarController?.tabBar.isHidden = true
             let destinationVC = segue.destination as! VersesViewController
             destinationVC.chapter = chapters[indexPath.row]
         }
@@ -151,21 +158,22 @@ class ChapterViewController: UIViewController{
 
 
 
-//MARK: - dbManagerDelegate
+//MARK: - Chapters Data Delegate
 
-extension ChapterViewController:dbManagerDelegate{
+extension ChapterViewController:ChaptersDataDelegate {
+    func didFailWithError(_ dbManager: DBManager, with error: String) {
+        print(error)
+    }
     
-    func didUpdateData(chapterArray: [Chapter]) {
-        chapters=chapterArray
+    
+    func didUpdateChapters(_ dbManager: DBManager, with chaptersArray: [Chapter]) {
+        chapters = chaptersArray
     }
 }
 
 
 
 //MARK: - UITableViewDelegate
-
-
-
 extension ChapterViewController:UITableViewDataSource,UITableViewDelegate {
     
     
