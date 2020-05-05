@@ -195,7 +195,7 @@
             </objects>
             <point key="canvasLocation" x="-1229" y="871"/>
         </scene>
-        <!--Saved View Controller-->
+        <!--Saved-->
         <scene sceneID="9Ak-Ye-xn5">
             <objects>
                 <viewController id="MBI-xM-cSR" customClass="SavedViewController" sceneMemberID="viewController">
@@ -225,7 +225,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BDG-gH-XKu"/>
                     </view>
-                    <tabBarItem key="tabBarItem" image="heart.fill" catalog="system" id="d5F-oK-eQ2"/>
+                    <tabBarItem key="tabBarItem" title="Saved" image="heart.fill" catalog="system" id="d5F-oK-eQ2"/>
                     <navigationItem key="navigationItem" id="GeI-D2-P2J"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlF-1s-12e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
