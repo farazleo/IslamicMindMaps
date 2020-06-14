@@ -57,6 +57,10 @@ class VersesViewController: UIViewController {
         player = AVPlayer(playerItem:playerItem)
         player.volume = 0.75
         
+        if (chapter?.id != 1 && chapter?.id != 9) {
+            verses.insert("﷽", at: 0)
+        }
+        
     
         
         
