@@ -89,19 +89,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Udt-G6-NKH">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Udt-G6-NKH">
+                                <rect key="frame" x="0.0" y="88" width="414" height="679"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VersesCell" textLabel="2tA-GJ-52x" style="IBUITableViewCellStyleDefault" id="xGl-V6-Vjr">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VersesCell" textLabel="2tA-GJ-52x" style="IBUITableViewCellStyleDefault" id="xGl-V6-Vjr">
                                         <rect key="frame" x="0.0" y="28" width="414" height="51.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xGl-V6-Vjr" id="YGv-h0-foF">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="51.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="51.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="right" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2tA-GJ-52x">
-                                                    <rect key="frame" x="20" y="0.0" width="355" height="51.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="51.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
@@ -112,13 +112,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktF-k7-GLC">
+                                <rect key="frame" x="182.5" y="783" width="49" height="22"/>
+                                <state key="normal" title="Play" image="play.fill" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playPauseButton:" destination="CBr-Lz-SHh" eventType="touchUpInside" id="NLm-KG-3OM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Udt-G6-NKH" firstAttribute="top" secondItem="dtd-em-o1P" secondAttribute="top" id="1eV-g5-e5y"/>
                             <constraint firstItem="dtd-em-o1P" firstAttribute="trailing" secondItem="Udt-G6-NKH" secondAttribute="trailing" id="2W0-TE-2hA"/>
+                            <constraint firstItem="dtd-em-o1P" firstAttribute="bottom" secondItem="ktF-k7-GLC" secondAttribute="bottom" constant="8" id="TdV-yB-PAu"/>
                             <constraint firstItem="dtd-em-o1P" firstAttribute="bottom" secondItem="Udt-G6-NKH" secondAttribute="bottom" id="ese-CQ-3qb"/>
                             <constraint firstItem="Udt-G6-NKH" firstAttribute="leading" secondItem="dtd-em-o1P" secondAttribute="leading" id="o7C-Qw-5d6"/>
+                            <constraint firstItem="ktF-k7-GLC" firstAttribute="centerX" secondItem="Udt-G6-NKH" secondAttribute="centerX" id="thd-nT-z0M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dtd-em-o1P"/>
                     </view>
@@ -130,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fD7-Vy-iNd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2567" y="67"/>
+            <point key="canvasLocation" x="2566.666666666667" y="66.964285714285708"/>
         </scene>
         <!--Mind Maps View Controller-->
         <scene sceneID="gL1-wT-s60">
@@ -273,6 +284,7 @@
         <image name="book" catalog="system" width="64" height="50"/>
         <image name="heart.fill" catalog="system" width="64" height="54"/>
         <image name="message" catalog="system" width="64" height="56"/>
+        <image name="play.fill" catalog="system" width="58" height="64"/>
     </resources>
     <color key="tintColor" red="0.24465948539999999" green="0.24465948539999999" blue="0.24465948539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

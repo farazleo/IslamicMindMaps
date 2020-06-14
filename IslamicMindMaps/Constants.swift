@@ -11,6 +11,9 @@ import Foundation
 struct K {
     
     static let baseURl = "http://data.alhudamedia.com/apps/com.alhuda.mindmaps/images/"
+    static let audioSurahLevelBaseURl = "http://server11.mp3quran.net/Othmn/"
+    static let audioBaseURl = "https://everyayah.com/data/Ayman_Sowaid_64kbps/"
+    
     
     struct MappingFile
     {

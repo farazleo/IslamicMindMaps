@@ -9,13 +9,34 @@
 import UIKit
 import CSV
 import SQLite
+import AVFoundation
+
 
 class VersesViewController: UIViewController {
-
+    
+    var player: AVPlayer!
+    var playerToggleState = 1
+    var surahAudioURL:URL?
     var verses = [String]()
     var mappingTable = [MappingTable]()
     var chapter: Chapter?
     var dbManager = DBManager()
+    
+
+    
+    @IBAction func playPauseButton(_ sender: UIButton) {
+        
+        
+        if playerToggleState == 1 {
+            player.play()
+            playerToggleState = 2
+            
+        } else {
+            player.pause()
+            playerToggleState = 1
+        }
+        
+    }
     
     
     @IBOutlet weak var tableView: UITableView!
@@ -29,7 +50,52 @@ class VersesViewController: UIViewController {
         dbManager.getVerses(of: chapter!.id)
         loadMappingTable()
         tableView.separatorStyle = .none
+        surahAudioURL = createAudioURLSurahLevel(rowIndex: Int(chapter!.id))
         
+        let playerItem = CachingPlayerItem(url: surahAudioURL!)
+        
+        player = AVPlayer(playerItem:playerItem)
+        player.volume = 0.75
+        
+    
+        
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        player = nil
+    }
+   
+    func format(number: Int64) -> String
+    {
+        switch number {
+        case 1...9:
+            return "00\(number)"
+        case 10...99:
+            return "0\(number)"
+        default:
+            return "\(number)"
+        }
+    }
+    
+    func createAudioURL (rowIndex: Int) -> URL {
+        let url = URL(string: K.audioBaseURl + "\(format(number: Int64(chapter?.id ?? 0)) )\(format(number: Int64(rowIndex))).mp3" )
+            return url!
+        
+        
+        
+    }
+    
+    
+    func createAudioURLSurahLevel (rowIndex: Int) -> URL {
+          let url = URL(string: K.audioSurahLevelBaseURl + "\(format(number: Int64(chapter?.id ?? 0))).mp3" )
+              return url!
+          
+          }
+    
+    func playAudio(url:URL) {
+        
+      
+       
     }
     
     func loadMappingTable()
@@ -89,6 +155,8 @@ extension VersesViewController: UITableViewDelegate
 {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+//        let audioURL = createAudioURL(rowIndex: indexPath.row + 1)
+//        playAudio(url: audioURL)
         performSegue(withIdentifier: K.Segue.versesToMindMap, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -120,6 +188,7 @@ extension VersesViewController: UITableViewDataSource
         
         cell.textLabel?.attributedText = attributedString
         cell.textLabel?.numberOfLines = 0
+        
         return cell
     }
 //    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
