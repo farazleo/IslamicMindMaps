@@ -261,21 +261,27 @@ extension VersesViewController: SwipeTableViewCellDelegate, SaveMindMapDelegate
     
     func saveVerseMindMap(of verseNo: Int)
     {
-        if let endPage = mappingTable[verseNo-1].endpg, let startPage = mappingTable[verseNo-1].startpg {
-            let mindMaps = [startPage,endPage]
-            let totalMindMaps = endPage - startPage
-            if totalMindMaps > 0{
-                for map in mindMaps{
+        if !mappingTable.isEmpty{
+            if let endPage = mappingTable[verseNo-1].endpg, let startPage = mappingTable[verseNo-1].startpg {
+                let mindMaps = [startPage,endPage]
+                let totalMindMaps = endPage - startPage
+                if totalMindMaps > 0{
+                    for map in mindMaps{
+                        let chNo = format(number: chapter!.id)
+                        let mapNo = format(number: Int64(map))
+                        saveMindMap.fetchImage(of: "\(chNo)-\(mapNo)", verse: verseNo)
+                    }
+                }
+                else{
                     let chNo = format(number: chapter!.id)
-                    let mapNo = format(number: Int64(map))
-                    saveMindMap.fetchImage(of: "\(chNo)-\(mapNo)", verse: verseNo)
+                    let mapNo = format(number: Int64(startPage))
+                    saveMindMap.fetchImage(of: "\(chNo)-\(mapNo).png", verse: verseNo)
                 }
             }
-            else{
-                let chNo = format(number: chapter!.id)
-                let mapNo = format(number: Int64(startPage))
-                saveMindMap.fetchImage(of: "\(chNo)-\(mapNo).png", verse: verseNo)
-            }
+        }
+        else
+        {
+            view.makeToast("Mind Map Not Avaliable Yet")
         }
     }
     
@@ -287,6 +293,7 @@ extension VersesViewController: SwipeTableViewCellDelegate, SaveMindMapDelegate
         savedUrl.surahName = chapter!.romanName
         savedUrl.verseNo = "\(verse)"
         DispatchQueue.main.async {
+            self.view.makeToast("Mind Map Saved")
             do{
                 try self.realm.write{
                     self.realm.add(savedUrl)
