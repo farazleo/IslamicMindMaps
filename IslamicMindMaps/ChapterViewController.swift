@@ -234,9 +234,7 @@ extension ChapterViewController:UISearchBarDelegate {
         }
         else {
             filterContentForSearchTextWithCategory(searchBar.text!,category)
-            
         }
-        
     }
 }
 

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SavedMindMapsCell" id="gTV-IL-0wX" customClass="SavedMindMapsCell" customModule="IslamicMindMaps" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="297" height="462"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="297" height="462"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v4Z-Co-9Ul">
+                        <rect key="frame" x="0.0" y="0.0" width="297" height="462"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="U42-nt-Vvu">
+                                <rect key="frame" x="5" y="5" width="287" height="452"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7q-gS-O8W">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="underConstruction" translatesAutoresizingMaskIntoConstraints="NO" id="qBt-5G-Zb6">
+                                        <rect key="frame" x="0.0" y="28.5" width="287" height="423.5"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="U42-nt-Vvu" firstAttribute="leading" secondItem="v4Z-Co-9Ul" secondAttribute="leading" constant="5" id="Eya-jy-sAl"/>
+                            <constraint firstAttribute="bottom" secondItem="U42-nt-Vvu" secondAttribute="bottom" constant="5" id="T97-Qt-rdU"/>
+                            <constraint firstAttribute="trailing" secondItem="U42-nt-Vvu" secondAttribute="trailing" constant="5" id="fp6-dh-4eG"/>
+                            <constraint firstItem="U42-nt-Vvu" firstAttribute="top" secondItem="v4Z-Co-9Ul" secondAttribute="top" constant="5" id="gUj-li-cdw"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="v4Z-Co-9Ul" secondAttribute="trailing" id="7vh-Ll-NDf"/>
+                <constraint firstItem="v4Z-Co-9Ul" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="anp-Ke-TUL"/>
+                <constraint firstItem="v4Z-Co-9Ul" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uRm-R2-v2o"/>
+                <constraint firstAttribute="bottom" secondItem="v4Z-Co-9Ul" secondAttribute="bottom" id="z8F-Fh-GOM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="297" height="462"/>
+            <connections>
+                <outlet property="mindMapImageView" destination="qBt-5G-Zb6" id="jWK-df-wIv"/>
+                <outlet property="mindMapLabel" destination="C7q-gS-O8W" id="enE-OS-Fto"/>
+            </connections>
+            <point key="canvasLocation" x="-48.550724637681164" y="-8.0357142857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="underConstruction" width="1769" height="2102"/>
+    </resources>
+</document>

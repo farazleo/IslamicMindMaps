@@ -50,10 +50,16 @@ struct K {
         static let chaptersCell = "ChaptersCell"
         static let mindMapsCell = "MindMapsCell"
         static let versesCell = "VersesCell"
+        static let savedMindMapsCell = "SavedMindMapsCell"
     }
+    
     struct nib {
         static let MindMapsCell = "MindMapCell"
         static let ChaptersCell = "ChaptersCell"
+        static let VersesCell = "VersesCell"
+        static let SavedMindMapsCell = "SavedMindMapsCell"
     }
+    
+    
 }
 

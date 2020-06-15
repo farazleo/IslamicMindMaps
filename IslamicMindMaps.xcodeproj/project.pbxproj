@@ -22,6 +22,10 @@
 		15F07CD6245601DC001A3236 /* quranlite.db in Resources */ = {isa = PBXBuildFile; fileRef = 15F07CD5245601DC001A3236 /* quranlite.db */; };
 		15F07CD824560363001A3236 /* Chapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15F07CD724560363001A3236 /* Chapters.swift */; };
 		48BA2CE96A2D7BE8D951EE82 /* Pods_IslamicMindMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCD376A373BD690DBD0AE618 /* Pods_IslamicMindMaps.framework */; };
+		972A66D324975737002FD7B0 /* SaveMindMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972A66D224975737002FD7B0 /* SaveMindMap.swift */; };
+		972A66DC249795ED002FD7B0 /* SavedMindMapsUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972A66DB249795ED002FD7B0 /* SavedMindMapsUrls.swift */; };
+		972A66DF2497A8C2002FD7B0 /* SavedMindMapsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972A66DD2497A8C2002FD7B0 /* SavedMindMapsCell.swift */; };
+		972A66E02497A8C2002FD7B0 /* SavedMindMapsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 972A66DE2497A8C2002FD7B0 /* SavedMindMapsCell.xib */; };
 		9787844E245CA7210094F7E2 /* verseToMindMap.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9787844D245CA7210094F7E2 /* verseToMindMap.csv */; };
 		97878450245CA7630094F7E2 /* ChaptersCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9787844F245CA7630094F7E2 /* ChaptersCell.xib */; };
 		97878453245CB6150094F7E2 /* MindMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97878451245CB6150094F7E2 /* MindMap.swift */; };
@@ -51,6 +55,10 @@
 		15F07CD724560363001A3236 /* Chapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapters.swift; sourceTree = "<group>"; };
 		37BDAA592B3656FCC8EC98F1 /* Pods-IslamicMindMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IslamicMindMaps.debug.xcconfig"; path = "Target Support Files/Pods-IslamicMindMaps/Pods-IslamicMindMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		4D2F6C3C81D46119C2BF5F4C /* Pods-IslamicMindMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IslamicMindMaps.release.xcconfig"; path = "Target Support Files/Pods-IslamicMindMaps/Pods-IslamicMindMaps.release.xcconfig"; sourceTree = "<group>"; };
+		972A66D224975737002FD7B0 /* SaveMindMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveMindMap.swift; sourceTree = "<group>"; };
+		972A66DB249795ED002FD7B0 /* SavedMindMapsUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMindMapsUrls.swift; sourceTree = "<group>"; };
+		972A66DD2497A8C2002FD7B0 /* SavedMindMapsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedMindMapsCell.swift; sourceTree = "<group>"; };
+		972A66DE2497A8C2002FD7B0 /* SavedMindMapsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedMindMapsCell.xib; sourceTree = "<group>"; };
 		9787844D245CA7210094F7E2 /* verseToMindMap.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = verseToMindMap.csv; sourceTree = "<group>"; };
 		9787844F245CA7630094F7E2 /* ChaptersCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChaptersCell.xib; sourceTree = "<group>"; };
 		97878451245CB6150094F7E2 /* MindMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MindMap.swift; sourceTree = "<group>"; };
@@ -134,6 +142,8 @@
 				97878452245CB6150094F7E2 /* MappingTable.swift */,
 				15D8C6AC244B0E800088DE0A /* Constants.swift */,
 				15DF410924963FD70013D965 /* CachingPlayerItem.swift */,
+				972A66D224975737002FD7B0 /* SaveMindMap.swift */,
+				972A66DB249795ED002FD7B0 /* SavedMindMapsUrls.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -146,8 +156,9 @@
 				97878456245CB63B0094F7E2 /* VersesViewController.swift */,
 				97878458245CB63B0094F7E2 /* MindMapsViewController.swift */,
 				97878455245CB63A0094F7E2 /* MindMapCell.swift */,
-				15C1DB712461E2B500AB781B /* SavedViewController.swift */,
 				15C1DB732461E3D000AB781B /* MyTabBarController.swift */,
+				15C1DB712461E2B500AB781B /* SavedViewController.swift */,
+				972A66DD2497A8C2002FD7B0 /* SavedMindMapsCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -159,6 +170,7 @@
 				15D8C6A3244B03330088DE0A /* LaunchScreen.storyboard */,
 				9787844F245CA7630094F7E2 /* ChaptersCell.xib */,
 				97878457245CB63B0094F7E2 /* MindMapCell.xib */,
+				972A66DE2497A8C2002FD7B0 /* SavedMindMapsCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -233,6 +245,7 @@
 			files = (
 				9787844E245CA7210094F7E2 /* verseToMindMap.csv in Resources */,
 				15D8C6A5244B03330088DE0A /* LaunchScreen.storyboard in Resources */,
+				972A66E02497A8C2002FD7B0 /* SavedMindMapsCell.xib in Resources */,
 				15F07CD6245601DC001A3236 /* quranlite.db in Resources */,
 				9787845B245CB63B0094F7E2 /* MindMapCell.xib in Resources */,
 				15D8C6A2244B03330088DE0A /* Assets.xcassets in Resources */,
@@ -291,11 +304,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				15D8C69D244B03330088DE0A /* ChapterViewController.swift in Sources */,
+				972A66D324975737002FD7B0 /* SaveMindMap.swift in Sources */,
 				15D8C699244B03330088DE0A /* AppDelegate.swift in Sources */,
 				97878454245CB6150094F7E2 /* MappingTable.swift in Sources */,
 				9787845C245CB63B0094F7E2 /* MindMapsViewController.swift in Sources */,
 				15F07CD824560363001A3236 /* Chapters.swift in Sources */,
 				15D8C69B244B03330088DE0A /* SceneDelegate.swift in Sources */,
+				972A66DC249795ED002FD7B0 /* SavedMindMapsUrls.swift in Sources */,
+				972A66DF2497A8C2002FD7B0 /* SavedMindMapsCell.swift in Sources */,
 				15484516244CBD2F002DF29A /* ChaptersCell.swift in Sources */,
 				15D8C6AF244C7E110088DE0A /* DBManager.swift in Sources */,
 				97878453245CB6150094F7E2 /* MindMap.swift in Sources */,
@@ -451,7 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IslamicMindMaps/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IslamicMindMaps/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
