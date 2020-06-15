@@ -12,6 +12,7 @@ PODS:
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
   - SwipeCellKit (2.7.1)
+  - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - CSV.swift (~> 2.4.3)
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - SDWebImage (~> 5.0)
   - SQLite.swift (~> 0.12.0)
   - SwipeCellKit
+  - Toast-Swift (~> 5.0.1)
 
 SPEC REPOS:
   trunk:
@@ -28,6 +30,7 @@ SPEC REPOS:
     - SDWebImage
     - SQLite.swift
     - SwipeCellKit
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   CSV.swift: d38741b349c067b4a6db42237cb0e2974d21ccac
@@ -36,7 +39,8 @@ SPEC CHECKSUMS:
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: fec1cb82805dc6d668a3cd36d9ec2aeca6ca394d
+PODFILE CHECKSUM: c14d7e72b71d7530ca2da4be37e1bb2d5225b7cf
 
 COCOAPODS: 1.9.1

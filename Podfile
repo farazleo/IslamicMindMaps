@@ -10,6 +10,7 @@ target 'IslamicMindMaps' do
   pod 'CSV.swift', '~> 2.4.3'
   pod 'SwipeCellKit'
   pod 'RealmSwift'
+  pod 'Toast-Swift', '~> 5.0.1'
 
 
 end
